@@ -1,0 +1,22 @@
+.header {
+    box-shadow: 0 15px 10px 0 rgb(0 0 0 / 20%);
+}
+
+.ddd {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 0;
+    margin-bottom: 48px;
+}
+
+.header-titl {
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 33px;
+    color: #111517;
+}
+
+.moon {
+    width: 15px;
+    height: 13.75px;
+}
