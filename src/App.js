@@ -111,52 +111,54 @@ function App() {
 
 	return (
 
-		<div className=''>
+		<div className='App'>
 			{country.isLoading ? <h1>Loading...</h1> : ''}
 			{country.isError ? <h1>{country.isError}</h1> : ''}
 			{country.data.length ? (
 				<div>
 					<Header />
-					<form
-						onSubmit={handleSubmit}>
-						<div className='container'>
-							<div className='mb-5 d-flex justify-content-between'>
-								<input
-									ref={Input}
-									className="w-25 form-control"
-									typeof="search"
-									placeholder="Search"
-								/>
-								<select
-									ref={select}
-									className='form-select w-25'
-									onChange={handleChange}
+					<div className='hhh'>
+						<form
+							onSubmit={handleSubmit}>
+							<div className='container'>
+								<div className='mb-5 d-flex justify-content-between'>
+									<input
+										ref={Input}
+										className="w-25 form-control"
+										typeof="search"
+										placeholder="Search"
+									/>
+									<select
+										ref={select}
+										className='form-select w-25'
+										onChange={handleChange}
 
-								>
-									<option
-										disabled
-										selected
-										value='sortby'
 									>
-										Sort by region
-									</option>
-									<option value='Africa'>Africa</option>
-									<option value='America'>America</option>
-									<option value='Asia'>Asia</option>
-									<option value='Europe'>Europe</option>
-									<option value='Oceania'>Oceania</option>
-								</select>
+										<option
+											disabled
+											selected
+											value='sortby'
+										>
+											Sort by region
+										</option>
+										<option value='Africa'>Africa</option>
+										<option value='America'>America</option>
+										<option value='Asia'>Asia</option>
+										<option value='Europe'>Europe</option>
+										<option value='Oceania'>Oceania</option>
+									</select>
+								</div>
 							</div>
+
+						</form>
+
+						<div className='container'>
+							<ul className='row gy-4 justify-content-center list-unstyled'>
+								{country.data.map((item, index) => (
+									<Card key={index} obj={item} />
+								))}
+							</ul>
 						</div>
-
-					</form>
-
-					<div className='container'>
-						<ul className='row gy-4 justify-content-center list-unstyled'>
-							{country.data.map((item, index) => (
-								<Card key={index} obj={item} />
-							))}
-						</ul>
 					</div>
 				</div>
 
